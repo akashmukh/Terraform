@@ -6,3 +6,7 @@ resource "aws_instance" "test" {
     Environment = "Dev"
   }
 }
+data "aws_caller_identity" "current" {}
+output  account_id {
+value = data.aws_caller_identity.default.account_id
+}
